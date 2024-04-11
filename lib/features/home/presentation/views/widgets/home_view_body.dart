@@ -11,31 +11,56 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomAppBar(),
-        FeatureBooksListView(),
-        SizedBox(
-          height: 40,
+    return const Column(children: [
+      CustomAppBar(),
+      Expanded(
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: FeatureBooksListView(),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 40,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  "Best Seller",
+                  style: Styles.textStyle18,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 20,
+              ),
+            ),
+            BestSellerListView()
+          ],
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
-          child: Text(
-            "Best Seller",
-            style: Styles.textStyle18,
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
-child:             BestSellerListViewItem()
-    ,
+      )
+    ]);
+  }
+}
 
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({
+    super.key,
+  });
 
-        )
-   ] );
+  @override
+  Widget build(BuildContext context) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30.0),
+          child: BestSellerListViewItem(),
+        );
+      }),
+    );
   }
 }

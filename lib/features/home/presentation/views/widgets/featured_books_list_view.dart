@@ -10,15 +10,12 @@ class FeatureBooksListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height*.3,
 
-      child: Padding(
-        padding: const EdgeInsets.only(left: 30.0,right: 10),
-        child: ListView.builder(
-          itemCount: 10,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const FeaturedListViewItem();
-          },
-        ),
+      child: ListView.builder(
+        itemCount: 10,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const FeaturedListViewItem();
+        },
       ),
     );
   }

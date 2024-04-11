@@ -12,14 +12,14 @@ class FeaturedListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.7/4,
       child: Container(
-        margin:  const EdgeInsets.only(left: 10),
+        margin:  const EdgeInsets.only(right: 10),
         decoration:  const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
                 AssetsData.testJungleBook,
               ),
               fit: BoxFit.fill),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
     );

@@ -58,12 +58,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: kTransitionDuration);
+          transition: Transition.cupertinoDialog, duration: kTransitionDuration);
     });
   }
 }

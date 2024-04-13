@@ -75,4 +75,3 @@ class BestSellerListViewItem extends StatelessWidget {
     );
   }
 }
-

@@ -15,68 +15,80 @@ class BookDetailsViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const CustomBookDetailsAppBar(),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: width * .2,
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const CustomBookDetailsAppBar(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: width * .15,
+                    ),
+                    child: const CustomBookImage(),
+                  ),
+                  const SizedBox(
+                    height: 43,
+                  ),
+                  Text(
+                    "The JunGle Book",
+                    style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Opacity(
+                    opacity: .7,
+                    child: Text(
+                      "The Legend Well",
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  const BookRating(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+                  const SizedBox(
+                    height: 37,
+                  ),
+                  const BooksAction(),
+                  const Expanded(
+                    child: SizedBox(
+                      height: 50,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "The JunGle Book",
+                      style: Styles.textStyle14.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                      height: MediaQuery.of(context).size.height * .15,
+                      child: const SimilarBooksDetailsListView()),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                ],
               ),
-              child: const CustomBookImage(),
-            ),
-            const SizedBox(
-              height: 43,
-            ),
-            Text(
-              "The JunGle Book",
-              style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            Opacity(
-              opacity: .7,
-              child: Text(
-                "The Legend Well",
-                style: Styles.textStyle20.copyWith(
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 18,
-            ),
-            const BookRating(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            const SizedBox(
-              height: 37,
-            ),
-            const BooksAction(),
-            const SizedBox(
-              height: 50,
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "The JunGle Book",
-                style: Styles.textStyle14.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16,),
-            const SimilarBooksDetailsListView(),
-            const SizedBox(height: 40,),
 
-
+            )
           ],
         ),
       ),
     );
   }
 }
-
-

@@ -1,7 +1,8 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/similar_books_details_list_view.dart';
 import 'package:flutter/material.dart';
-
+import 'books_action.dart';
 import 'custom_book_details_app_bar.dart';
 import 'custom_book_image.dart';
 
@@ -47,10 +48,35 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 18,
             ),
-            const Center(child: BookRating(mainAxisAlignment: MainAxisAlignment.center,))
+            const BookRating(
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            const SizedBox(
+              height: 37,
+            ),
+            const BooksAction(),
+            const SizedBox(
+              height: 50,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "The JunGle Book",
+                style: Styles.textStyle14.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16,),
+            const SimilarBooksDetailsListView(),
+            const SizedBox(height: 40,),
+
+
           ],
         ),
       ),
     );
   }
 }
+
+

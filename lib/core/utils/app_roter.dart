@@ -26,7 +26,6 @@ abstract class AppRouter {
               // Change the opacity of the screen using a Curve based on the the animation's
               // value
               return FadeTransition(
-
                 opacity:
                     CurveTween(curve: Curves.slowMiddle).animate(animation),
                 child: child,
@@ -46,16 +45,14 @@ abstract class AppRouter {
               // Change the opacity of the screen using a Curve based on the the animation's
               // value
               return FadeTransition(
-
                 opacity:
-                CurveTween(curve: Curves.slowMiddle).animate(animation),
+                    CurveTween(curve: Curves.easeOutBack).animate(animation),
                 child: child,
               );
             },
           );
         },
       ),
-
     ],
   );
 }

@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
-              child: FeatureBooksListView(),
+              child: FeaturedBooksListView(),
             ),
             SliverToBoxAdapter(
               child: SizedBox(

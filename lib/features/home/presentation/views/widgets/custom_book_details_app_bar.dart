@@ -20,6 +20,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
               MaterialTapTargetSize.shrinkWrap, // the '2023' part
             )),
         IconButton(
+            tooltip: "shoppingCart,",
             onPressed: () {},
             icon: const Icon(Icons.shopping_cart),
             iconSize: 30),

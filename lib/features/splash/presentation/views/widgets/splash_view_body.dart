@@ -30,6 +30,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void dispose() {
     super.dispose();
     animationController.dispose();
+
   }
 
   @override
@@ -57,11 +58,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+
   }
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
+
       GoRouter.of(context).push(AppRouter.kHomeView);
+
     });
   }
 }

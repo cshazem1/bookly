@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/app_roter.dart';
-import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/styles.dart';
-import 'book_rating.dart';
+import '../utils/app_roter.dart';
+import '../utils/assets.dart';
+import '../utils/styles.dart';
+import '../../features/home/presentation/views/widgets/book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({
     super.key,
   });
 
@@ -16,7 +16,6 @@ class BestSellerListViewItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
-
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10),

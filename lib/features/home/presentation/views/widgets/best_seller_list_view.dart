@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'best_seller_list_view_item.dart';
+import '../../../../../core/widgets/book_list_view_item.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({
@@ -13,7 +13,7 @@ class BestSellerListView extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(horizontal: 30.0),
-          child: BestSellerListViewItem(),
+          child: BookListViewItem(),
         );
       }),
     );

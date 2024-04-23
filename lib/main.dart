@@ -1,28 +1,28 @@
-import 'package:bookly/core/utils/app_roter.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-import 'constans.dart';
+Future<void> fetchData() async {
+  final Uri url = Uri.parse('https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchAirport');
+  final Map<String, String> params = {'query': 'london'};
+  final Map<String, String> headers = {
+    'X-RapidAPI-Key': 'c49d7e267fmsh6fde30ee7d5509ep159deajsn2f7610b96bb3',
+    'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com',
+  };
 
-void main() {
-  runApp(const Bookly());
+  try {
+    final response = await http.get(url.replace(queryParameters: params), headers: headers);
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      print(data);
+    } else {
+      print('Request failed with status: ${response.statusCode}');
+    }
+  } catch (error) {
+    print('Error: $error');
+  }
 }
 
-class Bookly extends StatelessWidget {
-  const Bookly({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
-
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
-          textTheme: GoogleFonts.montserratTextTheme(
-            ThemeData.dark().textTheme,
-          )),
-    );
-  }
+void main() {
+  fetchData();
 }
